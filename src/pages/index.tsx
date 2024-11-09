@@ -130,7 +130,7 @@ export default function Home() {
               </li>
               <li>
                 <span className="underline underline-offset-4">X Banner</span> -
-                Change you banner to one of the following images:
+                Change your banner to one of the following images:
                 <div className="flex flex-col md:flex-row gap-4 mx-auto w-full justify-center items-center mt-6">
                   <BannerPreview src="/banner.webp" alt="Bluesky Banner" />
                   <BannerPreview
@@ -147,7 +147,7 @@ export default function Home() {
                 >
                   Import Tweets
                 </Link>{" "}
-                - Bring all your tweet along with you. Developers can use{" "}
+                - Bring all your tweets along with you. Developers can use{" "}
                 <Link
                   href="https://github.com/marcomaroni-github/twitter-to-bluesky"
                   target="_blank"
