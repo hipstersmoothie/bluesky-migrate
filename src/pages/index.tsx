@@ -42,7 +42,7 @@ function BannerPreview({ src, alt }: { src: string; alt: string }) {
     <a
       href={src}
       className="rounded-lg overflow-hidden border-2 border-mauve-normal relative group"
-      download={true}
+      download
     >
       <Image src={src} alt={alt} width={1090 / 5} height={567 / 5} />
 
@@ -114,7 +114,7 @@ export default function Home() {
                   X Display Name
                 </span>{" "}
                 - Change your display name on X (not your handle) to:
-                <div className="bg-mauve-3 dark:bg-mauvedark-3 p-6 rounded-lg border border-mauve-7 dark:border-mauvedark-7 mt-6 text-center">
+                <div className="bg-mauve-3 dark:bg-mauvedark-3 p-4 rounded-lg border border-mauve-7 dark:border-mauvedark-7 mt-6 text-center">
                   Your Name 🦋 @your.bluesky.handle
                 </div>
               </li>
@@ -157,7 +157,6 @@ export default function Home() {
                 </Link>
                 .
               </li>
-
               <li>
                 <Link
                   href="https://tweetdelete.net/"
@@ -177,6 +176,34 @@ export default function Home() {
                 </Link>{" "}
                 if you&apos;re technical. This will mess up any embedded tweets
                 throughout the internet.
+              </li>
+              <li>
+                <span className="underline underline-offset-4">
+                  Update social links
+                </span>{" "}
+                - Replace X with Bluesky. Make this change across LinkedIn,
+                GitHub, Medium, personal website, and other platforms.
+                <div className="flex gap-4 mt-6">
+                  <a
+                    href="/bluesky-logo.svg"
+                    className="rounded-lg overflow-hidden border-2 border-mauve-normal relative group p-4"
+                    download
+                  >
+                    <Image
+                      src="/bluesky-logo.svg"
+                      alt="Bluesky logo"
+                      width={32}
+                      height={32}
+                    />
+
+                    <div className="absolute inset-0 flex items-center justify-center bg-mauve-action opacity-0 group-hover:opacity-80 transition-opacity">
+                      <DownloadIcon height={24} width={24} />
+                    </div>
+                  </a>
+                  <div className="bg-mauve-3 dark:bg-mauvedark-3 rounded-lg border border-mauve-7 dark:border-mauvedark-7 flex-1 flex justify-center items-center">
+                    https://bsky.app/profile/your.bluesky.handle
+                  </div>
+                </div>
               </li>
             </ol>
           </div>
