@@ -81,7 +81,7 @@ export default function Home() {
             </h1>
           </div>
           <div className="flex flex-col max-w-[60ch] mx-auto w-full">
-            <p className="text-center">
+            <p className="text-left">
               This page serves a simple guide on how to migrate to{" "}
               <Link href="https://bsky.app">Bluesky</Link> from X. All steps are
               optional, but you should really do the first two.
