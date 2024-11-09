@@ -1,5 +1,13 @@
 import Image from "next/image";
 import localFont from "next/font/local";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "../components/ui/tooltip";
+import GithubLogo from "../components/GithubLogo";
+import BlueSkyLogo from "../components/BlueSkyLogo";
+import { DownloadIcon } from "@radix-ui/react-icons";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -12,103 +20,166 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+function Link(props: React.ComponentProps<"a">) {
+  return (
+    <a
+      className="text-blue-dim underline underline-offset-4underline-offset-4"
+      {...props}
+    />
+  );
+}
+
+function BannerPreview({ src, alt }: { src: string; alt: string }) {
+  return (
+    <a
+      href={src}
+      className="rounded-lg overflow-hidden border-2 border-mauve-normal relative group"
+      download={true}
+    >
+      <Image src={src} alt={alt} width={1090 / 5} height={567 / 5} />
+
+      <div className="absolute inset-0 flex items-center justify-center bg-mauve-action opacity-0 group-hover:opacity-80 transition-opacity">
+        <DownloadIcon height={24} width={24} />
+      </div>
+    </a>
+  );
+}
+
 export default function Home() {
+  const year = new Date().getFullYear();
+
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
+      className={`${geistSans.variable} ${geistMono.variable} flex flex-col gap-16 font-[family-name:var(--font-geist-sans)] min-h-screen bg-mauve-app text-mauve-normal`}
     >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      <main className="px-8 md:pt-8 flex flex-col row-start-2 items-center sm:items-start flex-1">
+        <div className="flex gap-5 py-10 mx-auto">
+          <BlueSkyLogo />
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold">
+            Bluesky Migration
+          </h1>
+        </div>
+        <div className="flex flex-col max-w-[60ch] mx-auto">
+          <p className="text-center">
+            This page serves a simple guide on how to migrate to{" "}
+            <Link href="https://bsky.app">Bluesky</Link> from X. All steps are
+            optional, but you should really do the first two.
+          </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <ol className="list-decimal list-outside flex flex-col gap-4 my-8 mx-4">
+            <li>
+              <Link
+                href="https://chromewebstore.google.com/detail/sky-follower-bridge/behhbpbpmailcnfbjagknjngnfdojpko?hl=en"
+                target="_blank"
+                rel="noopener"
+              >
+                Import X Followers
+              </Link>{" "}
+              - To start you can check if anyone you follow on X is on Bluesky
+            </li>
+            <li>
+              <Link
+                href="https://blueskydirectory.com/starter-packs/all"
+                target="_blank"
+                rel="noopener"
+              >
+                Starter packs
+              </Link>{" "}
+              - Lists of users that help you mass follow members of a community.
+            </li>
+            <li>
+              <span className="underline underline-offset-4">
+                X Display Name
+              </span>{" "}
+              - Change your display name (not your handle) to:
+              <div className="bg-mauve-3 dark:bg-mauvedark-3 p-6 rounded-lg border border-mauve-7 dark:border-mauvedark-7 mt-6 text-center">
+                Your Name (@your_handle.bsky.social)
+              </div>
+            </li>
+            <li>
+              <span className="underline underline-offset-4">X Banner</span> -
+              Change you banner to one of the following images:
+              <div className="flex flex-col md:flex-row gap-4 mx-auto w-full justify-center items-center mt-6">
+                <BannerPreview src="/banner.webp" alt="Bluesky Banner" />
+                <BannerPreview
+                  src="/banner-dark.webp"
+                  alt="Dark Bluesky Banner"
+                />
+              </div>
+            </li>
+            <li>
+              <Link
+                href="https://blueark.app/en-us/"
+                target="_blank"
+                rel="noopener"
+              >
+                Import Tweets
+              </Link>{" "}
+              - Bring all your tweet along with you. Developers can use{" "}
+              <Link
+                href="https://github.com/marcomaroni-github/twitter-to-bluesky"
+                target="_blank"
+                rel="noopener"
+              >
+                this
+              </Link>
+              .
+            </li>
+
+            <li>
+              <Link
+                href="https://tweetdelete.net/"
+                target="_blank"
+                rel="noopener"
+              >
+                Delete Tweets
+              </Link>{" "}
+              - A paid service, but you can use{" "}
+              <Link
+                href="https://github.com/lucahammer/tweetXer"
+                target="_blank"
+                rel="noopener"
+              >
+                this project
+              </Link>{" "}
+              if you&apos;re technical.
+            </li>
+          </ol>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="row-start-3 text-mauve-dim  flex flex-col gap-4 flex-wrap items-center justify-center p-8 bg-mauve-3 dark:bg-mauvedark-3">
+        <div className="flex gap-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <a
+                href="https://bsky.app/profile/hipstersmoothie.com"
+                target="_blank"
+                rel="noopener"
+              >
+                <BlueSkyLogo size="small" color="currentColor" />
+              </a>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>View creator on BlueSky</p>
+            </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger>
+              <a
+                href="https://github.com/hipstersmoothie/skymod"
+                target="_blank"
+                rel="noopener"
+              >
+                <GithubLogo size="small" color="currentColor" />
+              </a>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>View source on Github</p>
+            </TooltipContent>
+          </Tooltip>
+        </div>
+        <div className="text-sm">Copyright © {year} Andrew Lisowski</div>
       </footer>
     </div>
   );
