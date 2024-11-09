@@ -113,9 +113,9 @@ export default function Home() {
                 <span className="underline underline-offset-4">
                   X Display Name
                 </span>{" "}
-                - Change your display name (not your handle) to:
+                - Change your display name on X (not your handle) to:
                 <div className="bg-mauve-3 dark:bg-mauvedark-3 p-6 rounded-lg border border-mauve-7 dark:border-mauvedark-7 mt-6 text-center">
-                  Your Name (@your_handle.bsky.social)
+                  Your Name 🦋 @your.bluesky.handle
                 </div>
               </li>
               <li>
