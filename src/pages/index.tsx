@@ -120,7 +120,7 @@ export default function Home() {
               </li>
               <li>
                 <Link
-                  href="https://x.com/compose/post?text=🦋g"
+                  href="https://x.com/compose/post?text=🦋"
                   target="_blank"
                   rel="noopener"
                 >
