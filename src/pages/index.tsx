@@ -20,10 +20,17 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-function Link(props: React.ComponentProps<"a">) {
+function Link({
+  variant,
+  ...props
+}: React.ComponentProps<"a"> & {
+  variant?: "destructive";
+}) {
   return (
     <a
-      className="text-blue-dim underline underline-offset-4underline-offset-4"
+      className={`${
+        variant === "destructive" ? "text-red-dim" : "text-blue-dim"
+      } underline underline-offset-4underline-offset-4`}
       {...props}
     />
   );
@@ -131,10 +138,11 @@ export default function Home() {
                 href="https://tweetdelete.net/"
                 target="_blank"
                 rel="noopener"
+                variant="destructive"
               >
                 Delete Tweets
               </Link>{" "}
-              - A paid service, but you can use{" "}
+              - (Very optional) A paid service, but you can use{" "}
               <Link
                 href="https://github.com/lucahammer/tweetXer"
                 target="_blank"
@@ -142,7 +150,8 @@ export default function Home() {
               >
                 this project
               </Link>{" "}
-              if you&apos;re technical.
+              if you&apos;re technical. This will mess up any embedded tweets
+              throughout the internet.
             </li>
           </ol>
         </div>
