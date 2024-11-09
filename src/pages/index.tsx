@@ -31,7 +31,7 @@ function Link({
     <a
       className={`${
         variant === "destructive" ? "text-red-dim" : "text-blue-dim"
-      } underline underline-offset-4underline-offset-4`}
+      } underline underline-offset-4`}
       {...props}
     />
   );
