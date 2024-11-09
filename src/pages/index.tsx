@@ -167,7 +167,7 @@ export default function Home() {
           <Tooltip>
             <TooltipTrigger>
               <a
-                href="https://github.com/hipstersmoothie/skymod"
+                href="https://github.com/hipstersmoothie/bluesky-migrate"
                 target="_blank"
                 rel="noopener"
               >
