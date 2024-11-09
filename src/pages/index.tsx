@@ -200,8 +200,10 @@ export default function Home() {
                       <DownloadIcon height={24} width={24} />
                     </div>
                   </a>
-                  <div className="text-ellipsis whitespace-nowrap overflow-hidden bg-mauve-3 dark:bg-mauvedark-3 rounded-lg border border-mauve-7 dark:border-mauvedark-7 flex-1 flex justify-center items-center">
-                    https://bsky.app/profile/your.bluesky.handle
+                  <div className="bg-mauve-3 dark:bg-mauvedark-3 rounded-lg border border-mauve-7 dark:border-mauvedark-7 flex-1 flex justify-center items-center p-4 min-w-0">
+                    <div className="text-ellipsis whitespace-nowrap overflow-hidden">
+                      https://bsky.app/profile/your.bluesky.handle
+                    </div>
                   </div>
                 </div>
               </li>
