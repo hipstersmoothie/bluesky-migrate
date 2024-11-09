@@ -120,13 +120,13 @@ export default function Home() {
               </li>
               <li>
                 <Link
-                  href="https://x.com/share?text=🦋&url="
+                  href="https://x.com/compose/post?text=🦋g"
                   target="_blank"
                   rel="noopener"
                 >
                   Say goodbye to X
                 </Link>{" "}
-                - Post a goodby with a 🦋
+                - Post a goodbye with a 🦋
               </li>
               <li>
                 <span className="underline underline-offset-4">X Banner</span> -
