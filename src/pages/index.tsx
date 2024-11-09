@@ -80,7 +80,7 @@ export default function Home() {
               Bluesky Migration
             </h1>
           </div>
-          <div className="flex flex-col max-w-[60ch] mx-auto">
+          <div className="flex flex-col max-w-[60ch] mx-auto w-full">
             <p className="text-center">
               This page serves a simple guide on how to migrate to{" "}
               <Link href="https://bsky.app">Bluesky</Link> from X. All steps are
@@ -200,7 +200,7 @@ export default function Home() {
                       <DownloadIcon height={24} width={24} />
                     </div>
                   </a>
-                  <div className="bg-mauve-3 dark:bg-mauvedark-3 rounded-lg border border-mauve-7 dark:border-mauvedark-7 flex-1 flex justify-center items-center">
+                  <div className="text-ellipsis whitespace-nowrap overflow-hidden bg-mauve-3 dark:bg-mauvedark-3 rounded-lg border border-mauve-7 dark:border-mauvedark-7 flex-1 flex justify-center items-center">
                     https://bsky.app/profile/your.bluesky.handle
                   </div>
                 </div>
