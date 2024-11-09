@@ -119,6 +119,16 @@ export default function Home() {
                 </div>
               </li>
               <li>
+                <Link
+                  href="https://x.com/share?text=🦋&url="
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Say goodbye to X
+                </Link>{" "}
+                - Post a goodby with a 🦋
+              </li>
+              <li>
                 <span className="underline underline-offset-4">X Banner</span> -
                 Change you banner to one of the following images:
                 <div className="flex flex-col md:flex-row gap-4 mx-auto w-full justify-center items-center mt-6">
