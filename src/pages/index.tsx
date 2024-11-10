@@ -90,7 +90,7 @@ export default function Home() {
             <ol className="list-decimal list-outside flex flex-col gap-4 my-8 mx-4">
               <li>
                 <Link
-                  href="https://github.com/kawamataryo/sky-follower-bridge?tab=readme-ov-file#-installation"
+                  href="https://sky-follower-bridge-docs.vercel.app/"
                   target="_blank"
                   rel="noopener"
                 >
