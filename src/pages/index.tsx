@@ -90,7 +90,7 @@ export default function Home() {
             <ol className="list-decimal list-outside flex flex-col gap-4 my-8 mx-4">
               <li>
                 <Link
-                  href="https://chromewebstore.google.com/detail/sky-follower-bridge/behhbpbpmailcnfbjagknjngnfdojpko?hl=en"
+                  href="https://skyfollowerbridge.com/"
                   target="_blank"
                   rel="noopener"
                 >
