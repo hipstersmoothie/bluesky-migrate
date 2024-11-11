@@ -126,7 +126,8 @@ export default function Home() {
                 >
                   Say goodbye to X
                 </Link>{" "}
-                - Post a goodbye with a 🦋
+                - Post a goodbye with a 🦋. If you want to help others, post and
+                pin this website to your profile.
               </li>
               <li>
                 <span className="underline underline-offset-4">X Banner</span> -
