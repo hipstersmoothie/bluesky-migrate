@@ -209,6 +209,16 @@ export default function Home() {
                 </div>
               </li>
             </ol>
+
+            <div className="mx-auto my-8">
+              <Link
+                href="https://shop.devtools.fm/collections/bluesky"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy the T-Shirt
+              </Link>
+            </div>
           </div>
         </main>
 
