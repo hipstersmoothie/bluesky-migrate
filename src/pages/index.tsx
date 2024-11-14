@@ -156,6 +156,18 @@ export default function Home() {
                 >
                   this
                 </Link>
+                <br />
+                <span className="">
+                  Also, if you have a non-technical background, or prefer a free
+                  user friendly tool, use{" "}
+                  <Link
+                    href="https://chromewebstore.google.com/detail/porto-port-your-tweets-to/ckilhjdflnaakopknngigiggfpnjaaop?authuser=2&hl=en"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Porto
+                  </Link>
+                </span>
                 .
               </li>
               <li>
